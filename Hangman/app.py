@@ -1,7 +1,6 @@
 from config import word, display
 from utils import welcome_message, get_user_input
 from utils import lives_lost, display_output
-from utils import win_loose
 
 
 def main():
