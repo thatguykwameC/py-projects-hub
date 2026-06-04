@@ -1,6 +1,6 @@
 from random import choice
 
-
+# ASCII art for the game's cover
 GAME_COVER = r"""
 .__                                                 
 |  |__ _____    ____    ____   _____ _____    ____  
@@ -10,7 +10,7 @@ GAME_COVER = r"""
      \/     \/     \//_____/       \/     \/     \/ 
 """
 
-
+# ASCII art for the gallows
 HANGMANPICS = [r'''
   +---+
   |   |
@@ -62,7 +62,7 @@ HANGMANPICS = [r'''
       |
 =========''']
 
-
+# animal pool from which an animal is chosen at random
 animal_pool = [
     "fox", "emu", "pig", "cat", "dog", "ant", "bat", "yak", "owl", "cow",
     "lion", "frog", "bear", "wolf", "hawk", "crab", "duck", "goat", "mule",
@@ -70,8 +70,10 @@ animal_pool = [
     "dolphin", "flamingo"
 ]
 
+# variables
 word = choice(animal_pool)
 
 dashes = "_" * len(word)
 
 display = list(dashes)
+
