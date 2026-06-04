@@ -18,19 +18,17 @@ def get_user_input():
         return guess
     
 
-def lives_lost(guess):
+def lives_lost(guess, life_count, count):
     """Handles wrong inputs"""
-    life_count, count = 7, 0
-
-    while True:
-        if guess not in word:
-            print(f"You guessed '{guess}'. That is not in the word, you loose a life")
-            print(HANGMANPICS[count])
-            count += 1
-            life_count -= 1
-            print(f"*********************** {life_count}/7LIVES LEFT ***********************")
-
-        return life_count
+    if guess not in word:
+        print(f"You guessed '{guess}'. That is not in the word, you loose a life")
+        print(HANGMANPICS[count])
+        count += 1
+        life_count -= 1
+        print(
+            f"*********************** {life_count}/7LIVES LEFT ***********************"
+            )
+    return life_count, count
     
 
 def display_output(guess, word, display):
@@ -46,3 +44,14 @@ def display_output(guess, word, display):
             check += letter
         print(check)
         return check
+    
+
+# def win_loose(word, life_count, check):
+#     """"""
+#     if life_count == 0:
+#         print("===== GAME OVER =====")
+#         active = False
+
+#     if word == check:
+#         print("===== YOU WIN! =====")
+#         active = False
