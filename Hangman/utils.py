@@ -16,6 +16,10 @@ def get_user_input():
         if len(guess) != 1:
             print("Invalid input")
             continue
+
+        if not guess.isalpha():
+            print("Enter a valid letter")
+            continue
         return guess
     
 
@@ -29,7 +33,7 @@ def lives_lost(guess, life_count, count):
         print(
             f"*********************** {life_count}/7 LIVES LEFT ***********************"
             )
-    return life_count, count
+    return life_count
     
 
 def display_output(guess, word, display):
