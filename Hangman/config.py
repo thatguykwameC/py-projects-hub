@@ -72,8 +72,6 @@ animal_pool = [
 
 # variables
 word = choice(animal_pool)
-
 dashes = "_" * len(word)
-
 display = list(dashes)
 

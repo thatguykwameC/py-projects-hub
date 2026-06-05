@@ -7,6 +7,7 @@ def welcome_message():
     print(GAME_COVER)
     print(f"Animal to guess: {dashes}")
 
+
 def get_user_input():
     """Handles user input"""
     while True:
@@ -26,7 +27,7 @@ def lives_lost(guess, life_count, count):
         count += 1
         life_count -= 1
         print(
-            f"*********************** {life_count}/7LIVES LEFT ***********************"
+            f"*********************** {life_count}/7 LIVES LEFT ***********************"
             )
     return life_count, count
     
