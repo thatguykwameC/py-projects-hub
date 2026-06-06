@@ -8,10 +8,17 @@ def welcome_message():
     print(f"Animal to guess: {dashes}")
 
 
-def get_user_input():
+def get_user_input(guessed):
     """Handles user input"""
+
     while True:
         guess = input("Guess a letter: ").strip().lower()
+
+        if guess not in guessed:
+            guessed.append(guess)
+        else:
+            print(f"You already guessed {guess}")
+            continue
 
         if len(guess) != 1:
             print("Invalid input")
@@ -20,8 +27,9 @@ def get_user_input():
         if not guess.isalpha():
             print("Enter a valid letter")
             continue
+
         return guess
-    
+
 
 def lives_lost(guess, life_count, count):
     """Handles wrong inputs"""
@@ -32,24 +40,24 @@ def lives_lost(guess, life_count, count):
         life_count -= 1
         print(
             f"*********************** {life_count}/7 LIVES LEFT ***********************"
-            )
+        )
     return life_count
-    
+
 
 def display_output(guess, word, display):
     """Displays the output of the word to be guessed"""
     check = ""
-  
+
     if guess in word:
 
         check_index = word.index(guess)
-        display[check_index] = guess 
-        
+        display[check_index] = guess
+
         for letter in display:
             check += letter
         print(check)
         return check
-    
+
 
 # def win_loose(word, life_count, check):
 #     """"""

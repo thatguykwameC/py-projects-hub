@@ -1,5 +1,10 @@
 from config import word, display
-from utils import welcome_message, get_user_input, lives_lost, display_output
+from utils import (
+    welcome_message,
+    get_user_input,
+    lives_lost,
+    display_output,
+)
 
 
 def main():
@@ -8,11 +13,12 @@ def main():
     life_count = 7
     count = 0
     active = True
+    guessed = []
 
     welcome_message()
 
     while active:
-        guess = get_user_input()
+        guess = get_user_input(guessed)
 
         life_count = lives_lost(guess, life_count, count)
 
@@ -25,7 +31,7 @@ def main():
         if word == check:
             print("===== YOU WIN! =====")
             active = False
-    
+
 
 if __name__ == "__main__":
     main()
