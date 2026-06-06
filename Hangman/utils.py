@@ -1,5 +1,9 @@
-from config import GAME_COVER, HANGMANPICS
-from config import word, dashes
+from config import (
+    GAME_COVER,
+    HANGMANPICS,
+    word,
+    dashes,
+)
 
 
 def welcome_message():
@@ -10,15 +14,8 @@ def welcome_message():
 
 def get_user_input(guessed):
     """Handles user input"""
-
     while True:
         guess = input("Guess a letter: ").strip().lower()
-
-        if guess not in guessed:
-            guessed.append(guess)
-        else:
-            print(f"You already guessed {guess}")
-            continue
 
         if len(guess) != 1:
             print("Invalid input")
@@ -28,16 +25,22 @@ def get_user_input(guessed):
             print("Enter a valid letter")
             continue
 
+        if guess not in guessed:
+            guessed.append(guess)
+        else:
+            print(f"You already guessed {guess}")
+            continue
         return guess
 
 
-def lives_lost(guess, life_count, count):
+def lives_lost(guess, life_count):
     """Handles wrong inputs"""
     if guess not in word:
         print(f"You guessed '{guess}'. That is not in the word, you loose a life")
-        print(HANGMANPICS[count])
-        count += 1
+        print(HANGMANPICS[7 - life_count])
+
         life_count -= 1
+
         print(
             f"*********************** {life_count}/7 LIVES LEFT ***********************"
         )
@@ -46,25 +49,21 @@ def lives_lost(guess, life_count, count):
 
 def display_output(guess, word, display):
     """Displays the output of the word to be guessed"""
-    check = ""
-
     if guess in word:
-
         check_index = word.index(guess)
         display[check_index] = guess
+        check = "".join(display)
 
-        for letter in display:
-            check += letter
         print(check)
         return check
 
 
-# def win_loose(word, life_count, check):
-#     """"""
-#     if life_count == 0:
-#         print("===== GAME OVER =====")
-#         active = False
-
-#     if word == check:
-#         print("===== YOU WIN! =====")
-#         active = False
+def game_status(life_count, word, check):
+    """Checks if the game has been won or lost"""
+    if life_count == 0:
+        print("===== GAME OVER =====")
+        return False
+    if word == check:
+        print("===== YOU WIN! =====")
+        return False
+    return True
