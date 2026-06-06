@@ -70,7 +70,7 @@ HANGMANPICS = [
 =========""",
 ]
 
-# animal pool from which an animal is chosen at random
+# Animal pool from which an animal is chosen at random
 animal_pool = [
     "fox",
     "emu",
@@ -103,6 +103,9 @@ animal_pool = [
     "dolphin",
     "flamingo",
 ]
+
+# Constants
+MAX_LIVES = 7
 
 # variables
 word = choice(animal_pool)
