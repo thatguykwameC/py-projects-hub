@@ -9,8 +9,7 @@ from utils import (
 
 
 def main():
-    """the main app"""
-
+    """The main app for the Hangman game"""
     guessed = []
     life_count = MAX_LIVES
 
