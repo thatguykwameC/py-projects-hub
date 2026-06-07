@@ -1,5 +1,6 @@
 from random import choice
 
+# Constants
 # ASCII art for the game's cover
 GAME_COVER = r"""
 .__                                                 
@@ -104,7 +105,6 @@ ANIMAL_POOL = [
     "hummingbird",
 ]
 
-# Constants
 MAX_LIVES = 7
 
 # variables
