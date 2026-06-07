@@ -1,4 +1,4 @@
-from config import MAX_LIVES, word, display
+from config import MAX_LIVES, word, display, dashes
 from utils import (
     welcome_message,
     get_user_input,
@@ -13,7 +13,7 @@ def main():
     guessed = []
     life_count = MAX_LIVES
 
-    welcome_message()
+    welcome_message(dashes)
 
     while True:
         guess = get_user_input(guessed)
