@@ -12,6 +12,18 @@ def welcome_message():
     print(f"Animal to guess: {dashes}")
 
 
+# Helper function that checks index(es)
+def checks_index(guess, display):
+    """Checks index"""
+    word_copy = list(word)
+    for letter in word_copy:
+        if guess == letter:
+            check_index = word_copy.index(guess)
+            word_copy[check_index] = "#"
+            display[check_index] = guess
+    return display
+
+
 def get_user_input(guessed):
     """Handles user input"""
     while True:
@@ -48,12 +60,10 @@ def lives_lost(guess, life_count):
 
 
 def display_output(guess, word, display):
-    """Displays the output of the word to be guessed"""
+    """Displays the output of the guesses"""
     if guess in word:
-        check_index = word.index(guess)
-        display[check_index] = guess
+        display = checks_index(guess, display)
         check = "".join(display)
-
         print(check)
         return check
 
@@ -63,6 +73,7 @@ def game_status(life_count, word, check):
     if life_count == 0:
         print("===== GAME OVER =====")
         return False
+
     if word == check:
         print("===== YOU WIN! =====")
         return False
