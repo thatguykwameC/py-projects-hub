@@ -12,7 +12,7 @@ def welcome_message():
     print(f"Animal to guess: {dashes}")
 
 
-# Helper function that checks index(es)
+# Helper function that checks index
 def checks_index(guess, display):
     """Checks index"""
     word_copy = list(word)
