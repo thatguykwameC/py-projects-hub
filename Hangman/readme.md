@@ -6,6 +6,8 @@ to reveal a hidden animal name. The player has 7 lives before the game ends.
 
 ---
 
+### Flow
+
 1. Display dashes for each letter in the word.
 2. Prompt the user to guess a letter.
 3. Checks if the letter is in the word
@@ -17,13 +19,15 @@ to reveal a hidden animal name. The player has 7 lives before the game ends.
 
 ---
 
-Modules:
+### Modules
 
 - config: constants, word list, and display
 - utils: game logic and input handling
 - app: main app
 
 ---
+
+### Versions
 
 This game was built in 3 versions:
 
@@ -33,7 +37,7 @@ This game was built in 3 versions:
 
 ---
 
-Concepts learned:
+### Concepts learned
 
 - Loops
 - Lists
