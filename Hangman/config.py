@@ -71,7 +71,7 @@ HANGMANPICS = [
 ]
 
 # A list of animals from which one is chosen at random
-animal_pool = [
+ANIMAL_POOL = [
     "ape",
     "frog",
     "hawk",
@@ -108,6 +108,6 @@ animal_pool = [
 MAX_LIVES = 7
 
 # variables
-word = choice(animal_pool)
+word = choice(ANIMAL_POOL)
 dashes = "_" * len(word)
 display = list(dashes)
