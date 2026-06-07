@@ -52,7 +52,7 @@ def lives_lost(guess, life_count):
         life_count -= 1
 
         print(
-            f"*********************** {life_count}/{MAX_LIVES} LIVES LEFT ***********************"
+            f"********************* {life_count}/{MAX_LIVES} LIVES LEFT *********************"
         )
     return life_count
 
