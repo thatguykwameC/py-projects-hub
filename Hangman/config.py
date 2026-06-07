@@ -10,7 +10,7 @@ GAME_COVER = r"""
      \/     \/     \//_____/       \/     \/     \/ 
 """
 
-# ASCII art for the gallows
+# A list of ASCII art for the gallows
 HANGMANPICS = [
     r"""
   +---+
@@ -70,38 +70,38 @@ HANGMANPICS = [
 =========""",
 ]
 
-# Animal pool from which an animal is chosen at random
+# A list of animals from which one is chosen at random
 animal_pool = [
-    "fox",
-    "emu",
-    "pig",
-    "cat",
-    "dog",
-    "ant",
-    "bat",
-    "yak",
-    "owl",
-    "cow",
-    "lion",
+    "ape",
     "frog",
-    "bear",
-    "wolf",
     "hawk",
-    "crab",
-    "duck",
-    "goat",
-    "mule",
-    "tiger",
+    "lion",
     "shark",
-    "whale",
-    "rhino",
+    "tiger",
     "zebra",
-    "chimp",
-    "hyena",
-    "camel",
-    "leopard",
+    "koala",
+    "otter",
+    "lemur",
+    "badger",
+    "falcon",
+    "jaguar",
+    "monkey",
+    "rabbit",
+    "walrus",
+    "cheetah",
     "dolphin",
+    "giraffe",
+    "penguin",
+    "alligator",
+    "chimpanzee",
     "flamingo",
+    "kangaroo",
+    "wolverine",
+    "chameleon",
+    "rhinoceros",
+    "salamander",
+    "hippopotamus",
+    "hummingbird",
 ]
 
 # Constants
