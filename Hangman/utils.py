@@ -75,5 +75,6 @@ def game_status(life_count, word, check):
 
     if word == check:
         print("===== YOU WIN! =====")
+        # print(f"The animal is {word}")
         return False
     return True
