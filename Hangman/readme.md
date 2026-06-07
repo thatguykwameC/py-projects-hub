@@ -17,13 +17,16 @@ to reveal a hidden animal name. The player has 7 lives before the game ends.
 
 ---
 
-"""
 Modules:
-config — constants, word list and display
-utils — game logic and input handling
-"""
+
+- config: — constants, word list and display
+- utils: game logic and input handling
+- app: main app
+
+---
 
 This game was built in 3 versions:
-v1.o handles no occurences of substrings
-v2.0 handles multiple occurences of substrings
-v3.0 handles game restart
+
+- v1.0 handles no occurences of substrings
+- v2.0 handles multiple occurences of substrings
+- v3.0 handles game restart
