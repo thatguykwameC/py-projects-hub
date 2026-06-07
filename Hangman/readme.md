@@ -30,3 +30,13 @@ This game was built in 3 versions:
 - v1.0 handles no occurences of substrings
 - v2.0 handles multiple occurences of substrings
 - v3.0 handles game restart
+
+---
+
+Concepts learned:
+
+- Loops
+- Lists
+- Functions
+- Strings
+- Modules
