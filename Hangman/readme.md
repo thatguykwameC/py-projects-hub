@@ -1,46 +1,94 @@
-## Hangman Game
+# Hangman Game
 
-A simple game of hangman:<br>
-A command-line word-guessing game. Players guess letters one at a time
-to reveal a hidden animal name. The player has 7 lives before the game ends.
+A command-line implementation of the classic Hangman game built with Python.
 
----
-
-### Flow
-
-1. Display dashes for each letter in the word.
-2. Prompt the user to guess a letter.
-3. Checks if the letter is in the word
-4. A wrong guess means deducting a life
-5. 7 lives in total
-6. If the user guesses the correct letter, it should replace the underscore being displayed
-7. Prints a "You win" when all words are successfully guessed and "Game Over" when the user runs out of lives
-8. The game ends when the user wins or loses
+Players guess letters one at a time to reveal a hidden animal name. The player has 7 lives and loses one life for each incorrect guess. The game ends when the player successfully reveals the word or runs out of lives.
 
 ---
 
-### Modules
+## Features
 
-- config: constants, word list, and display
-- utils: game logic and input handling
-- app: main app
-
----
-
-### Versions
-
-This game was built in 3 versions:
-
-- v1.0 handles no occurrences of substrings
-- v2.0 handles multiple occurrences of substrings
-- v3.0 handles game restart
+- Random animal selection
+- Input validation
+- Duplicate guess detection
+- Multiple letter occurrence handling
+- ASCII Hangman display
+- Win/Loss detection
+- Game restart support
 
 ---
 
-### Concepts learned
+## Installation
 
-- Loops
-- Lists
-- Functions
-- Strings
-- Modules
+Clone the repository:
+
+```bash
+git clone <repo-url>
+```
+
+Navigate to the project folder:
+
+```bash
+cd hangman
+```
+
+Run the game:
+
+```bash
+python3 app.py
+```
+
+---
+
+## Gameplay Flow
+
+1. Display hidden word as underscores.
+2. Prompt the player to guess a letter.
+3. Check whether the letter exists in the word.
+4. Correct guesses reveal all matching letters.
+5. Incorrect guesses deduct a life.
+6. The game ends when:
+   - The word is fully revealed, or
+   - The player runs out of lives.
+
+---
+
+## Project Structure
+
+```text
+hangman/
+├── app.py
+├── config.py
+├── utils.py
+└── README.md
+```
+
+---
+
+## Version History
+
+### v1.0
+
+- Basic game loop
+- Single occurrence letter handling
+
+### v2.0
+
+- Multiple occurrence letter handling
+
+### v3.0
+
+- Game restart functionality
+
+---
+
+## Concepts Practiced
+
+- Modular programming
+- Function decomposition
+- Input validation
+- String manipulation
+- List operations
+- Control flow
+- Python modules and imports
+- State management
