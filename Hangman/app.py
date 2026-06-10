@@ -1,6 +1,6 @@
 from utils import (
     welcome_message,
-    play,
+    run_game,
     play_again,
 )
 
@@ -12,11 +12,12 @@ def main():
     while True:
         welcome_message()
 
-        play(guessed)
+        run_game(guessed)
 
         response = play_again()
 
         if response == "n":
+            print("===== GOODBYE! =====")
             break
         continue
 
