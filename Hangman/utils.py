@@ -61,7 +61,6 @@ def get_user_input(guessed):
 
 def lives_lost(guess, life_count, word):
     """Handles wrong inputs"""
-    # life_count = MAX_LIVES
     if guess not in word:
         print(f"Your guess '{guess}' is not in the word, you lose a life")
         print(HANGMANPICS[MAX_LIVES - life_count])
@@ -98,7 +97,7 @@ def game_status(life_count, word, check):
     return True
 
 
-def play(guessed):
+def run_game(guessed):
     """Wrapper function"""
     word = word_to_be_guessed()
     dashes = "_" * len(word)
