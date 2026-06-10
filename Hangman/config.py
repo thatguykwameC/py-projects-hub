@@ -1,4 +1,4 @@
-from random import choice
+# from random import choice
 
 # Constants
 # ASCII art for the game's cover
@@ -107,7 +107,8 @@ ANIMAL_POOL = [
 
 MAX_LIVES = 7
 
+VALID_RESPONSES = {"y", "n"}
+
 # variables
-word = choice(ANIMAL_POOL)
-dashes = "_" * len(word)
-display = list(dashes)
+# dashes = "_" * len(word)
+# display = list(dashes)
