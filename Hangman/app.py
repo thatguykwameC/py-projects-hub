@@ -16,11 +16,12 @@ def main():
     guessed = []
 
     while True:
-        life_count = MAX_LIVES
         welcome_message()
 
-        play(guessed, life_count)
+        play(guessed)
+
         p_again = play_again()
+
         if p_again == "n":
             break
         continue

@@ -109,9 +109,9 @@ def play(guessed):
     while True:
         guess = get_user_input(game_guessed)
 
-        life_counter = lives_lost(guess, life_count, word)
+        life_count = lives_lost(guess, life_count, word)
 
         check = display_output(guess, word, display)
 
-        if not game_status(life_counter, word, check):
+        if not game_status(life_count, word, check):
             break
