@@ -1,29 +1,29 @@
-from config import MAX_LIVES, word, display, dashes
+from config import MAX_LIVES
 from utils import (
     welcome_message,
+    word_to_be_guessed,
     get_user_input,
     lives_lost,
     display_output,
     game_status,
+    play,
+    play_again,
 )
 
 
 def main():
     """The main app for the Hangman game"""
     guessed = []
-    life_count = MAX_LIVES
-
-    welcome_message(dashes)
 
     while True:
-        guess = get_user_input(guessed)
+        life_count = MAX_LIVES
+        welcome_message()
 
-        life_count = lives_lost(guess, life_count)
-
-        check = display_output(guess, word, display)
-
-        if not game_status(life_count, word, check):
+        play(guessed, life_count)
+        p_again = play_again()
+        if p_again == "n":
             break
+        continue
 
 
 if __name__ == "__main__":
