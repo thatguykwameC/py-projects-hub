@@ -31,10 +31,11 @@ def checks_index(guess, word, display):
 
 def play_again():
     """Asks if the user wants to play again"""
-    play_again = input("Do you wish to play again? (Y/N) ").strip().lower()
-    if play_again in VALID_RESPONSES:
-        return play_again
-    print(f"Choose (Y/N)")
+    while True:
+        again = input("Do you wish to play again? (Y/N) ").strip().lower()
+        if again in VALID_RESPONSES:
+            return again
+        print("Invalid Input, choose (Y/N)")
 
 
 def get_user_input(guessed):
