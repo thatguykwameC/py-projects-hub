@@ -52,6 +52,7 @@ python3 app.py
 6. The game ends when:
    - The word is fully revealed, or
    - The player runs out of lives.
+7. Option to restart game
 
 ---
 
@@ -69,18 +70,17 @@ hangman/
 
 ## Version History
 
-### v1.0
-
+```text
+v1.0:
 - Basic game loop
 - Single occurrence letter handling
 
-### v2.0
-
+v2.0:
 - Multiple occurrence letter handling
 
-### v3.0
-
+v3.0:
 - Game restart functionality
+```
 
 ---
 
