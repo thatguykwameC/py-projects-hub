@@ -31,7 +31,7 @@ git clone https://github.com/thatguykwameC/py-projects-hub.git
 Navigate to the project folder:
 
 ```bash
-cd hangman
+cd py-projects-hub/hangman
 ```
 
 Run the game:
@@ -52,7 +52,7 @@ python3 app.py
 6. The game ends when:
    - The word is fully revealed, or
    - The player runs out of lives.
-7. Option to restart game
+7. Option to restart the game
 
 ---
 
@@ -73,7 +73,7 @@ hangman/
 ```text
 v1.0:
 - Basic game loop
-- Single occurrence letter handling
+- Single-occurrence letter handling
 
 v2.0:
 - Multiple occurrence letter handling
