@@ -14,14 +14,8 @@ def welcome_message():
     print(GAME_COVER)
 
 
-def word_to_be_guessed():
-    """Chooses the word to be guessed"""
-    word = choice(ANIMAL_POOL)
-    return word
-
-
 # Helper function that checks index
-def checks_index(guess, word, display):
+def _checks_index(guess, word, display):
     """Finds all occurrences of guess and updates display accordingly"""
     for index, letter in enumerate(word):
         if letter == guess:
@@ -76,7 +70,7 @@ def lives_lost(guess, life_count, word):
 def display_output(guess, word, display):
     """Displays the output of the guesses"""
     if guess in word:
-        display = checks_index(guess, word, display)
+        display = _checks_index(guess, word, display)
 
     check = "".join(display)
     print(check)
@@ -97,17 +91,17 @@ def game_status(life_count, word, check):
     return True
 
 
-def run_game(guessed):
-    """Wrapper function"""
-    word = word_to_be_guessed()
+def run_game():
+    """Runs a single game session"""
+    guessed = []
+    word = choice(ANIMAL_POOL)
     dashes = "_" * len(word)
     print(f"Animal to guess: {dashes}")
     display = list(dashes)
-    game_guessed = guessed[:]
     life_count = MAX_LIVES
 
     while True:
-        guess = get_user_input(game_guessed)
+        guess = get_user_input(guessed)
 
         life_count = lives_lost(guess, life_count, word)
 
