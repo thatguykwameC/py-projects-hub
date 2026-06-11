@@ -46,7 +46,7 @@ def get_user_input(guessed):
             continue
 
         if guess not in guessed:
-            guessed.append(guess)
+            guessed.add(guess)
         else:
             print(f"You already guessed {guess}")
             continue
@@ -93,10 +93,10 @@ def game_status(life_count, word, check):
 
 def run_game():
     """Runs a single game session"""
-    guessed = []
+    guessed = set()
     word = choice(ANIMAL_POOL)
     dashes = "_" * len(word)
-    print(f"Animal to guess: {dashes}")
+    print(f"Animal to guess: {" ".join(dashes)}")
     display = list(dashes)
     life_count = MAX_LIVES
 
