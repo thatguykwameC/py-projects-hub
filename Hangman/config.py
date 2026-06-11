@@ -102,6 +102,6 @@ ANIMAL_POOL = [
     "hummingbird",
 ]
 
-MAX_LIVES = 7
+MAX_LIVES = len(HANGMANPICS) - 1
 
 VALID_RESPONSES = {"y", "n"}
