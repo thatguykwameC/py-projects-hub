@@ -56,6 +56,34 @@ python3 app.py
 
 ---
 
+## Example Gameplay
+
+```text
+Animal to guess: _ _ _ _ _
+
+Guess a letter: a
+
+a _ _ _ _
+
+Guess a letter: z
+
+'z' is not in the word.
+
+6/7 lives left
+
+Guess a letter: p
+
+a p _ _ _
+
+Guess a letter: e
+
+a p e _ _
+
+...
+```
+
+---
+
 ## Project Structure
 
 ```text
