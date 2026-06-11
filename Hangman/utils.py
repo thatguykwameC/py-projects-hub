@@ -20,7 +20,6 @@ def _checks_index(guess, word, display):
     for index, letter in enumerate(word):
         if letter == guess:
             display[index] = guess
-    return display
 
 
 def play_again():
@@ -48,7 +47,7 @@ def get_user_input(guessed):
         if guess not in guessed:
             guessed.add(guess)
         else:
-            print(f"You already guessed {guess}")
+            print(f"You already guessed '{guess}'")
             continue
         return guess
 
@@ -70,7 +69,7 @@ def lives_lost(guess, life_count, word):
 def display_output(guess, word, display):
     """Displays the output of the guesses"""
     if guess in word:
-        display = _checks_index(guess, word, display)
+        _checks_index(guess, word, display)
 
     check = "".join(display)
     print(check)
@@ -96,7 +95,7 @@ def run_game():
     guessed = set()
     word = choice(ANIMAL_POOL)
     dashes = "_" * len(word)
-    print(f"Animal to guess: {" ".join(dashes)}")
+    print(f"Animal to guess: {' '.join(dashes)}")
     display = list(dashes)
     life_count = MAX_LIVES
 
