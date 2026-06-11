@@ -14,7 +14,6 @@ def welcome_message():
     print(GAME_COVER)
 
 
-# Helper function that checks index
 def _checks_index(guess, word, display):
     """Finds all occurrences of guess and updates display accordingly"""
     for index, letter in enumerate(word):
