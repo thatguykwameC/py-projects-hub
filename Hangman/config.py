@@ -1,5 +1,8 @@
 from pathlib import Path
 
+BASE_DIR = Path(__file__).parent
+
+
 # ASCII art for the game's cover
 GAME_COVER = r"""
 .__                                                 
@@ -9,6 +12,7 @@ GAME_COVER = r"""
 |___|  (____  /___|  /\___  /|__|_|  (____  /___|  /
      \/     \/     \//_____/       \/     \/     \/ 
 """
+
 
 # A list of ASCII art for the gallows
 HANGMANPICS = [
@@ -70,16 +74,19 @@ HANGMANPICS = [
 =========""",
 ]
 
+
 # Pool of words
-ANIMALS = Path("Hangman/categories/animals.txt")
-COUNTRIES = Path("Hangman/categories/countries.txt")
-SPACE = Path("Hangman/categories/space.txt")
+ANIMALS = BASE_DIR / "categories" / "animals.txt"
+COUNTRIES = BASE_DIR / "categories" / "countries.txt"
+SPACE = BASE_DIR / "categories" / "space.txt"
+
 
 WORD_POOL = {
     "animal": ANIMALS.read_text().splitlines(),
     "country": COUNTRIES.read_text().splitlines(),
     "space-term": SPACE.read_text().splitlines(),
 }
+
 
 MAX_LIVES = len(HANGMANPICS)
 
