@@ -4,6 +4,7 @@ from config import (
     GAME_COVER,
     HANGMANPICS,
     WORD_POOL,
+    CATEGORY_LABEL,
     MAX_LIVES,
     VALID_RESPONSES,
 )
@@ -17,9 +18,7 @@ def welcome_message():
 def choose_category():
     """Asks the user to choose a category"""
     while True:
-        response = (
-            input("Pick a Category (Animal/Country/Space-Term): ").strip().lower()
-        )
+        response = input("Pick a Category (Animal/Country/Space): ").strip().lower()
         if response in WORD_POOL:
             return response
         print("Enter a valid category")
@@ -96,7 +95,7 @@ def game_status(life_count, word, check, response):
     """Checks if the game has been won or lost"""
     if life_count == 0:
         print("===== GAME OVER =====")
-        print(f"The {response} is {word.title()}")
+        print(f"The {CATEGORY_LABEL[response]} is {word.title()}")
         return False
 
     if word == check:
@@ -111,7 +110,7 @@ def run_game(response):
     guessed = set()
     word = get_word(response)
     dashes = "_" * len(word)
-    print(f"{response.title()} to guess: {' '.join(dashes)}")
+    print(f"{CATEGORY_LABEL[response]} to guess: {' '.join(dashes)}")
     display = list(dashes)
     life_count = MAX_LIVES
 
