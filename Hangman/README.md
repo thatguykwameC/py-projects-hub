@@ -31,7 +31,7 @@ git clone https://github.com/thatguykwameC/py-projects-hub.git
 Navigate to the project folder:
 
 ```bash
-cd py-projects-hub/hangman
+cd py-projects-hub/Hangman
 ```
 
 Run the game:
