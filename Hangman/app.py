@@ -1,5 +1,6 @@
 from utils import (
     welcome_message,
+    choose_category,
     run_game,
     play_again,
 )
@@ -8,9 +9,11 @@ from utils import (
 def main():
     """The main app for the Hangman game"""
     while True:
-        welcome_message()
+        response = welcome_message()
 
-        run_game()
+        choose_category(response)
+
+        run_game(response)
 
         response = play_again()
 
