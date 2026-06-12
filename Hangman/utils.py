@@ -12,11 +12,20 @@ from config import (
 def welcome_message():
     """Displays the game banner"""
     print(GAME_COVER)
-    response = input("Pick a Category (Animal/Country/Space-Term): ").strip().lower()
-    return response
 
 
-def choose_category(response):
+def choose_category():
+    """Asks the user to choose a category"""
+    while True:
+        response = (
+            input("Pick a Category (Animal/Country/Space-Term): ").strip().lower()
+        )
+        if response in WORD_POOL:
+            return response
+        print("Enter a valid category")
+
+
+def get_word(response):
     """Choses the category of words"""
     category = WORD_POOL[response]
     return choice(category)
@@ -87,7 +96,7 @@ def game_status(life_count, word, check, response):
     """Checks if the game has been won or lost"""
     if life_count == 0:
         print("===== GAME OVER =====")
-        print(f"The {response} is {word}")
+        print(f"The {response} is {word.title()}")
         return False
 
     if word == check:
@@ -100,7 +109,7 @@ def game_status(life_count, word, check, response):
 def run_game(response):
     """Runs a single game session"""
     guessed = set()
-    word = choose_category(response)
+    word = get_word(response)
     dashes = "_" * len(word)
     print(f"{response.title()} to guess: {' '.join(dashes)}")
     display = list(dashes)
