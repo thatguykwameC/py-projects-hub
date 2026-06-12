@@ -1,3 +1,5 @@
+from pathlib import Path
+
 # ASCII art for the game's cover
 GAME_COVER = r"""
 .__                                                 
@@ -68,40 +70,17 @@ HANGMANPICS = [
 =========""",
 ]
 
-# A list of animals from which one is chosen at random
-ANIMAL_POOL = [
-    "ape",
-    "frog",
-    "hawk",
-    "lion",
-    "shark",
-    "tiger",
-    "zebra",
-    "koala",
-    "otter",
-    "lemur",
-    "badger",
-    "falcon",
-    "jaguar",
-    "monkey",
-    "rabbit",
-    "walrus",
-    "cheetah",
-    "dolphin",
-    "giraffe",
-    "penguin",
-    "alligator",
-    "chimpanzee",
-    "flamingo",
-    "kangaroo",
-    "wolverine",
-    "chameleon",
-    "rhinoceros",
-    "salamander",
-    "hippopotamus",
-    "hummingbird",
-]
+# Pool of words
+ANIMALS = Path("Hangman/categories/animals.txt")
+COUNTRIES = Path("Hangman/categories/countries.txt")
+SPACE = Path("Hangman/categories/space.txt")
 
-MAX_LIVES = len(HANGMANPICS) - 1
+WORD_POOL = {
+    "animal": ANIMALS.read_text().splitlines(),
+    "country": COUNTRIES.read_text().splitlines(),
+    "space-term": SPACE.read_text().splitlines(),
+}
+
+MAX_LIVES = len(HANGMANPICS)
 
 VALID_RESPONSES = {"y", "n"}
