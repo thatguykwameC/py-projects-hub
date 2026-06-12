@@ -3,7 +3,7 @@ from random import choice
 from config import (
     GAME_COVER,
     HANGMANPICS,
-    ANIMAL_POOL,
+    WORD_POOL,
     MAX_LIVES,
     VALID_RESPONSES,
 )
@@ -12,6 +12,14 @@ from config import (
 def welcome_message():
     """Displays the game banner"""
     print(GAME_COVER)
+    response = input("Pick a Category (Animal/Country/Space-Term): ").strip().lower()
+    return response
+
+
+def choose_category(response):
+    """Choses the category of words"""
+    category = WORD_POOL[response]
+    return choice(category)
 
 
 def _checks_index(guess, word, display):
@@ -75,11 +83,11 @@ def display_output(guess, word, display):
     return check
 
 
-def game_status(life_count, word, check):
+def game_status(life_count, word, check, response):
     """Checks if the game has been won or lost"""
     if life_count == 0:
         print("===== GAME OVER =====")
-        print(f"The animal is {word}")
+        print(f"The {response} is {word}")
         return False
 
     if word == check:
@@ -89,12 +97,12 @@ def game_status(life_count, word, check):
     return True
 
 
-def run_game():
+def run_game(response):
     """Runs a single game session"""
     guessed = set()
-    word = choice(ANIMAL_POOL)
+    word = choose_category(response)
     dashes = "_" * len(word)
-    print(f"Animal to guess: {' '.join(dashes)}")
+    print(f"{response.title()} to guess: {' '.join(dashes)}")
     display = list(dashes)
     life_count = MAX_LIVES
 
@@ -105,5 +113,5 @@ def run_game():
 
         check = display_output(guess, word, display)
 
-        if not game_status(life_count, word, check):
+        if not game_status(life_count, word, check, response):
             break
