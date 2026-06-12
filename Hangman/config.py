@@ -88,6 +88,13 @@ WORD_POOL = {
 }
 
 
+CATEGORY_LABEL = {
+    "animal": "Animal",
+    "country": "Country",
+    "space": "Space-Term",
+}
+
+
 MAX_LIVES = len(HANGMANPICS)
 
 VALID_RESPONSES = {"y", "n"}
