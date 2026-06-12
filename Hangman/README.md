@@ -87,11 +87,16 @@ a p e _ _
 ## Project Structure
 
 ```text
-hangman/
+Hangman/
 ├── app.py
+├── categories
+│   ├── animals.txt
+│   ├── countries.txt
+│   └── space.txt
 ├── config.py
-├── utils.py
-└── README.md
+├── README.md
+├── trial.py
+└── utils.py
 ```
 
 ---
