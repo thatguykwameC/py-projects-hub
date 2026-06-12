@@ -44,7 +44,6 @@ cardinal
 caribou
 carp
 cassowary
-cassowary2
 cat
 caterpillar
 catfish
