@@ -113,7 +113,7 @@ v2.0:
 
 v3.0:
 - Game restart functionality
-- Added Category Selection
+- Category selection
 ```
 
 ---
