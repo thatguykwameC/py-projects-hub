@@ -59,26 +59,44 @@ python3 app.py
 ## Example Gameplay
 
 ```text
+.__
+|  |__ _____    ____    ____   _____ _____    ____
+|  |  \\__  \  /    \  / ___\ /     \\__  \  /    \
+|   Y  \/ __ \|   |  \/ /_/  >  Y Y  \/ __ \|   |  \
+|___|  (____  /___|  /\___  /|__|_|  (____  /___|  /
+     \/     \/     \//_____/       \/     \/     \/
+
+Pick a Category (Animal/Country/Space): animal
 Animal to guess: _ _ _ _ _
+Guess a letter: t
+t____
+Guess a letter: h
+Your guess 'h' is not in the word, you lose a life
 
-Guess a letter: a
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+***************** 6/7 LIVES LEFT *****************
+t____
+Guess a letter: g
+t_g__
+Guess a letter: u
+Your guess 'u' is not in the word, you lose a life
 
-a _ _ _ _
-
-Guess a letter: z
-
-'z' is not in the word.
-
-6/7 lives left
-
-Guess a letter: p
-
-a p _ _ _
-
-Guess a letter: e
-
-a p e _ _
-
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+***************** 5/7 LIVES LEFT *****************
+t_g__
+Guess a letter:
 ...
 ```
 
