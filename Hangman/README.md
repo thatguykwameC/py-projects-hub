@@ -107,13 +107,16 @@ Guess a letter:
 
 ```text
 Hangman/
+├── categories
+│   ├── animals.txt
+│   ├── countries.txt
+│   └── space.txt
 ├── app.py
 ├── config.py
-├── utils.py
-├── categories/
-│   ├── animals.txt
-│   ├── countries.txt
-│   └── space.txt
+├── README.md
+├── trial.py
+└── utils.py
+
 ```
 
 ---
