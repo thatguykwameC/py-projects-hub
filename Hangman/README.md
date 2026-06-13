@@ -10,7 +10,7 @@ The game ends when the player successfully reveals the word or runs out of lives
 
 ## Features
 
-- Caregory selection
+- Category selection
 - Random word selection
 - Input validation
 - Duplicate guess detection
@@ -145,3 +145,4 @@ v3.0:
 - Control flow
 - Python modules and imports
 - State management
+- File I/O
