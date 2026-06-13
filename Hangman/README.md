@@ -10,7 +10,8 @@ The game ends when the player successfully reveals the word or runs out of lives
 
 ## Features
 
-- Random animal selection
+- Caregory selection
+- Random word selection
 - Input validation
 - Duplicate guess detection
 - Multiple letter occurrence handling
@@ -107,14 +108,12 @@ Guess a letter:
 ```text
 Hangman/
 ├── app.py
-├── categories
+├── config.py
+├── utils.py
+├── categories/
 │   ├── animals.txt
 │   ├── countries.txt
 │   └── space.txt
-├── config.py
-├── README.md
-├── trial.py
-└── utils.py
 ```
 
 ---
