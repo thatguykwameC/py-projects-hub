@@ -2,7 +2,7 @@
 
 A command-line implementation of the classic Hangman game built with Python.
 
-Players guess letters one at a time to reveal a hidden animal name.<br>
+Players guess letters one at a time to reveal the hidden word.<br>
 The player has 7 lives and loses one life for each incorrect guess.<br>
 The game ends when the player successfully reveals the word or runs out of lives.
 
