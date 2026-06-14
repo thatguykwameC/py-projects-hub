@@ -1,7 +1,7 @@
 from utils import (
     welcome_message,
-    run_game,
     choose_category,
+    run_game,
     play_again,
 )
 
