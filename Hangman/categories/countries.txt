@@ -3,7 +3,7 @@ albania
 algeria
 andorra
 angola
-antiguaandbarbuda
+antigua and barbuda
 argentina
 armenia
 australia
@@ -19,25 +19,25 @@ belize
 benin
 bhutan
 bolivia
-bosniaandherzegovina
+bosnia and herzegovina
 botswana
 brazil
 brunei
 bulgaria
-burkinafaso
+burkina faso
 burundi
-caboverde
+cabo verde
 cambodia
 cameroon
 canada
-centralafricanrepublic
+central african republic
 chad
 chile
 china
 colombia
 comoros
 congo
-costarica
+costa rica
 croatia
 cuba
 cyprus
@@ -45,12 +45,12 @@ czechia
 denmark
 djibouti
 dominica
-dominicanrepublic
+dominican republic
 ecuador
 egypt
-elsalvador
+el salvador
 england
-equatorialguinea
+equatorial guinea
 eritrea
 estonia
 eswatini
@@ -67,7 +67,7 @@ greece
 grenada
 guatemala
 guinea
-guineabissau
+guinea-bissau
 guyana
 haiti
 honduras
@@ -103,7 +103,7 @@ malaysia
 maldives
 mali
 malta
-marshallislands
+marshall islands
 mauritania
 mauritius
 mexico
@@ -119,20 +119,20 @@ namibia
 nauru
 nepal
 netherlands
-newzealand
+new zealand
 nicaragua
 niger
 nigeria
-northernireland
-northkorea
-northmacedonia
+northern ireland
+north korea
+north macedonia
 norway
 oman
 pakistan
 palau
 palestine
 panama
-papuanewguinea
+papua new guinea
 paraguay
 peru
 philippines
@@ -142,28 +142,28 @@ qatar
 romania
 russia
 rwanda
-saintkittsandnevis
-saintlucia
-saintvincent
+saint kitts and nevis
+saint lucia
+saint vincent
 samoa
-sanmarino
-saotomeandprincipe
-saudiarabia
+san marino
+sao tome and principe
+saudi arabia
 scotland
 senegal
 serbia
 seychelles
-sierraleone
+sierra leone
 singapore
 slovakia
 slovenia
-solomonislands
+solomon islands
 somalia
-southafrica
-southkorea
-southsudan
+south africa
+south korea
+south sudan
 spain
-srilanka
+sri lanka
 sudan
 suriname
 sweden
@@ -173,23 +173,22 @@ taiwan
 tajikistan
 tanzania
 thailand
-timorleste
+timor-leste
 togo
 tonga
-trinidadandtobago
+trinidad and tobago
 tunisia
 turkey
 turkmenistan
 tuvalu
 uganda
 ukraine
-unitedarabemirates
-unitedkingdom
-unitedstates
+united arab emirates
+united states
 uruguay
 uzbekistan
 vanuatu
-vaticancity
+vatican city
 venezuela
 vietnam
 wales
