@@ -17,8 +17,9 @@ def welcome_message():
 
 def choose_category():
     """Asks the user to choose a category"""
+    available = "/".join(CATEGORY_LABEL.values())
     while True:
-        response = input("Pick a Category (Animal/Country/Space): ").strip().lower()
+        response = input(f"Pick a Category {available}: ").strip().lower()
         if response in WORD_POOL:
             return response
         print("Enter a valid category")
@@ -28,6 +29,19 @@ def get_word(response):
     """Choses the category of words"""
     category = WORD_POOL[response]
     return choice(category)
+
+
+def create_display(word):
+    """Replaces letters in word with dashes"""
+    display = []
+
+    for char in word:
+        if char == " ":
+            display.append(" ")
+        else:
+            display.append("_")
+
+    return display
 
 
 def _checks_index(guess, word, display):
@@ -64,6 +78,7 @@ def get_user_input(guessed):
         else:
             print(f"You already guessed '{guess}'")
             continue
+
         return guess
 
 
@@ -72,12 +87,11 @@ def lives_lost(guess, life_count, word):
     if guess not in word:
         print(f"Your guess '{guess}' is not in the word, you lose a life")
         print(HANGMANPICS[MAX_LIVES - life_count])
-
         life_count -= 1
-
         print(
             f"***************** {life_count}/{MAX_LIVES} LIVES LEFT *****************"
         )
+
     return life_count
 
 
@@ -87,7 +101,9 @@ def display_output(guess, word, display):
         _checks_index(guess, word, display)
 
     check = "".join(display)
-    print(check)
+    # Display for the user
+    print(_format_display(display))
+
     return check
 
 
@@ -108,11 +124,10 @@ def game_status(life_count, word, check, response):
 def run_game(response):
     """Runs a single game session"""
     guessed = set()
-    word = get_word(response)
-    dashes = "_" * len(word)
-    print(f"{CATEGORY_LABEL[response]} to guess: {' '.join(dashes)}")
-    display = list(dashes)
     life_count = MAX_LIVES
+    word = get_word(response)
+    display = create_display(word)
+    print(f"{CATEGORY_LABEL[response]} to guess: {' '.join(display)}")
 
     while True:
         guess = get_user_input(guessed)
