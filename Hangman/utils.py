@@ -1,4 +1,4 @@
-from random import choice
+from random import shuffle
 
 from config import (
     GAME_COVER,
@@ -8,69 +8,28 @@ from config import (
     MAX_LIVES,
     VALID_RESPONSES,
 )
+from _helpers import (
+    _create_display,
+    _checks_index,
+    _format_display,
+)
+
+WORD_QUEUE = {}
+
+for category, words in WORD_POOL.items():
+    shuffled_words = words.copy()
+    shuffle(shuffled_words)
+    WORD_QUEUE[category] = shuffled_words
 
 
-def welcome_message():
-    """Displays the game banner"""
-    print(GAME_COVER)
+def get_word(category_name):
+    """Returns a unique word until the category is exhausted"""
+    if not WORD_QUEUE[category_name]:
+        words = WORD_POOL[category_name].copy()
+        shuffle(words)
+        WORD_QUEUE[category_name] = words
 
-
-def choose_category():
-    """Asks the user to choose a category"""
-    available = "/".join(CATEGORY_LABEL.values())
-    while True:
-        response = input(f"Pick a Category {available}: ").strip().lower()
-        if response in WORD_POOL:
-            return response
-        print("Enter a valid category")
-
-
-def get_word(response):
-    """Choses the category of words"""
-    category = WORD_POOL[response]
-    return choice(category)
-
-
-def create_display(word):
-    """Replaces letters in word with dashes"""
-    display = []
-
-    for char in word:
-        if char == " ":
-            display.append(" ")
-        else:
-            display.append("_")
-
-    return display
-
-
-def _format_display(display):
-    """Formats the display for user output."""
-    formatted = ""
-
-    for char in display:
-        if char == " ":
-            formatted += "   "
-        else:
-            formatted += f"{char} "
-
-    return formatted.rstrip()
-
-
-def _checks_index(guess, word, display):
-    """Finds all occurrences of guess and updates display accordingly"""
-    for index, letter in enumerate(word):
-        if letter == guess:
-            display[index] = guess
-
-
-def play_again():
-    """Asks if the user wants to play again"""
-    while True:
-        again = input("Do you wish to play again? (Y/N) ").strip().lower()
-        if again in VALID_RESPONSES:
-            return again
-        print("Invalid Input, choose (Y/N)")
+    return WORD_QUEUE[category_name].pop()
 
 
 def get_user_input(guessed):
@@ -89,21 +48,20 @@ def get_user_input(guessed):
         if guess not in guessed:
             guessed.add(guess)
         else:
-            print(f"You already guessed '{guess}'")
+            print("\nGuessed Letters:")
+            print(", ".join(sorted(guessed)))
             continue
 
         return guess
 
 
 def lives_lost(guess, life_count, word):
-    """Handles wrong inputs"""
+    """Handles wrong guesses"""
     if guess not in word:
-        print(f"Your guess '{guess}' is not in the word, you lose a life")
+        print(f"❌ '{guess}' is not in the word.")
         print(HANGMANPICS[MAX_LIVES - life_count])
         life_count -= 1
-        print(
-            f"***************** {life_count}/{MAX_LIVES} LIVES LEFT *****************"
-        )
+        print(f"***************** Lives Remaining: {life_count} *****************")
 
     return life_count
 
@@ -134,12 +92,29 @@ def game_status(life_count, word, check, response):
     return True
 
 
+def welcome_message():
+    """Displays the game banner"""
+    message = f"\nGuess the Hidden Word :)" f"\nYou have: {MAX_LIVES} lives"
+    return GAME_COVER + message
+
+
+def choose_category():
+    """Asks the user to choose a category"""
+    available = "/".join(CATEGORY_LABEL.keys())
+    while True:
+        print(f"Categories: ({available.title()})")
+        response = input(f"Pick a Category: ").strip().lower()
+        if response in WORD_POOL:
+            return response
+        print("Enter a valid category")
+
+
 def run_game(response):
     """Runs a single game session"""
     guessed = set()
     life_count = MAX_LIVES
     word = get_word(response)
-    display = create_display(word)
+    display = _create_display(word)
     print(f"{CATEGORY_LABEL[response]} to guess: {' '.join(display)}")
 
     while True:
@@ -151,3 +126,12 @@ def run_game(response):
 
         if not game_status(life_count, word, check, response):
             break
+
+
+def play_again():
+    """Asks if the user wants to play again"""
+    while True:
+        again = input("Do you wish to play again? (Y/N) ").strip().lower()
+        if again in VALID_RESPONSES:
+            return again
+        print("Invalid Input, choose (Y/N)")
