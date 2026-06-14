@@ -103,8 +103,7 @@ _ u _ a _ u
 Guess a letter: 
 
 ...
-
----
+```
 
 ## Project Structure
 
