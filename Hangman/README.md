@@ -108,11 +108,13 @@ Guess a letter:
 ## Project Structure
 
 ```text
-Hangman/
+Hangman
 ├── categories
 │   ├── animals.txt
 │   ├── countries.txt
-│   └── space.txt
+│   ├── fruits.txt
+│   ├── space.txt
+│   └── veggies.txt
 ├── app.py
 ├── config.py
 ├── README.md
