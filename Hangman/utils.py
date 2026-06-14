@@ -44,6 +44,19 @@ def create_display(word):
     return display
 
 
+def _format_display(display):
+    """Formats the display for user output."""
+    formatted = ""
+
+    for char in display:
+        if char == " ":
+            formatted += "   "
+        else:
+            formatted += f"{char} "
+
+    return formatted.rstrip()
+
+
 def _checks_index(guess, word, display):
     """Finds all occurrences of guess and updates display accordingly"""
     for index, letter in enumerate(word):
