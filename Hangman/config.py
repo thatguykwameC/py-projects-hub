@@ -99,6 +99,7 @@ CATEGORY_LABEL = {
     "vegetable": "Vegetable",
 }
 
+WORD_QUEUE = {}
 
 MAX_LIVES = len(HANGMANPICS)
 
