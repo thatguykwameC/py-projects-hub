@@ -104,7 +104,7 @@ Guess a letter:
 
 ...
 ```
-
+---
 ## Project Structure
 
 ```text
