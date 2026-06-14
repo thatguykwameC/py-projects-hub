@@ -3,6 +3,7 @@ from random import shuffle
 from config import (
     GAME_COVER,
     HANGMANPICS,
+    WORD_QUEUE,
     WORD_POOL,
     CATEGORY_LABEL,
     MAX_LIVES,
@@ -14,7 +15,6 @@ from _helpers import (
     _format_display,
 )
 
-WORD_QUEUE = {}
 
 for category, words in WORD_POOL.items():
     shuffled_words = words.copy()
@@ -94,7 +94,10 @@ def game_status(life_count, word, check, response):
 
 def welcome_message():
     """Displays the game banner"""
-    message = f"\nGuess the Hidden Word :)" f"\nYou have: {MAX_LIVES} lives"
+    message = (
+        f"\nGuess the Hidden Word :)"
+        f"\nYou have: {MAX_LIVES} lives"
+    )
     return GAME_COVER + message
 
 
