@@ -60,19 +60,20 @@ python3 app.py
 ## Example Gameplay
 
 ```text
-.__
-|  |__ _____    ____    ____   _____ _____    ____
-|  |  \\__  \  /    \  / ___\ /     \\__  \  /    \
+.__                                                 
+|  |__ _____    ____    ____   _____ _____    ____  
+|  |  \\__  \  /    \  / ___\ /     \\__  \  /    \ 
 |   Y  \/ __ \|   |  \/ /_/  >  Y Y  \/ __ \|   |  \
 |___|  (____  /___|  /\___  /|__|_|  (____  /___|  /
-     \/     \/     \//_____/       \/     \/     \/
+     \/     \/     \//_____/       \/     \/     \/ 
 
-Pick a Category (Animal/Country/Space): animal
-Animal to guess: _ _ _ _ _
-Guess a letter: t
-t____
-Guess a letter: h
-Your guess 'h' is not in the word, you lose a life
+You have 7 lives :)
+Pick a Category Animal/Astronomy-Term/Country/Fruit/Vegetable: country
+Country to guess: _ _ _ _ _ _
+Guess a letter: a
+_ _ _ a _ _
+Guess a letter: i
+Your guess 'i' is not in the word, you lose a life
 
   +---+
   |   |
@@ -82,11 +83,13 @@ Your guess 'h' is not in the word, you lose a life
       |
 =========
 ***************** 6/7 LIVES LEFT *****************
-t____
-Guess a letter: g
-t_g__
+_ _ _ a _ _
+Guess a letter: a
+You already guessed 'a'
 Guess a letter: u
-Your guess 'u' is not in the word, you lose a life
+_ u _ a _ u
+Guess a letter: o
+Your guess 'o' is not in the word, you lose a life
 
   +---+
   |   |
@@ -96,10 +99,10 @@ Your guess 'u' is not in the word, you lose a life
       |
 =========
 ***************** 5/7 LIVES LEFT *****************
-t_g__
-Guess a letter:
+_ u _ a _ u
+Guess a letter: 
+
 ...
-```
 
 ---
 
