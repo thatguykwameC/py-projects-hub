@@ -67,8 +67,11 @@ python3 app.py
 |___|  (____  /___|  /\___  /|__|_|  (____  /___|  /
      \/     \/     \//_____/       \/     \/     \/ 
 
-You have 7 lives :)
-Pick a Category Animal/Astronomy-Term/Country/Fruit/Vegetable: country
+Guess the Hidden Word :)
+You have: 7 lives
+Categories: (Animal/Astronomy/Country/Fruit/Vegetable)
+Pick a Category: country
+
 Country to guess: _ _ _ _ _ _
 Guess a letter: a
 _ _ _ a _ _
@@ -85,7 +88,8 @@ Your guess 'i' is not in the word, you lose a life
 ***************** 6/7 LIVES LEFT *****************
 _ _ _ a _ _
 Guess a letter: a
-You already guessed 'a'
+Guessed Letters:
+a
 Guess a letter: u
 _ u _ a _ u
 Guess a letter: o
@@ -117,6 +121,7 @@ Hangman
 │   └── veggies.txt
 ├── app.py
 ├── config.py
+├── _helpers.py
 ├── README.md
 ├── trial.py
 └── utils.py
@@ -129,15 +134,20 @@ Hangman
 
 ```text
 v1.0:
-- Basic game loop
-- Single-occurrence letter handling
+- Implemented core Hangman game loop using Python
+- Basic word guessing functionality (single letter input)
+- Simple win/lose conditions based on remaining lives
 
 v2.0:
-- Multiple occurrence letter handling
+- Improved letter handling to support multiple occurrences in a word
+- Introduced tracking of guessed letters using a set to prevent duplicates
+- Enhanced input validation for non-alphabetic and repeated inputs
+- Added word queue system to prevent repeated words until the pool is exhausted
 
 v3.0:
-- Game restart functionality
-- Category selection
+- Added full game restart functionality without restarting the program
+- Implemented category selection system (Animals, Countries, Fruits, etc.)
+- Improved user experience with structured prompts and cleaner game flow
 ```
 
 ---
