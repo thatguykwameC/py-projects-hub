@@ -101,6 +101,7 @@ def choose_category():
     while True:
         print(f"Categories: ({available.title()})")
         response = input(f"Pick a Category: ").strip().lower()
+
         if response in WORD_POOL:
             return response
         print("Enter a valid category")
@@ -130,6 +131,7 @@ def play_again():
     """Asks if the user wants to play again"""
     while True:
         again = input("Do you wish to play again? (Y/N) ").strip().lower()
+
         if again in VALID_RESPONSES:
             return again
         print("Invalid Input, choose (Y/N)")
