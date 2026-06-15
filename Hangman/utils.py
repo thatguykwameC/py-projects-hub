@@ -16,15 +16,12 @@ from _helpers import (
     _display_remaining_lives,
 )
 
-for category, words in WORD_POOL.items():
-    shuffled_words = words.copy()
-    shuffle(shuffled_words)
-    WORD_QUEUE[category] = shuffled_words
+WORD_QUEUE = {}
 
 
 def get_word(category_name):
     """Returns a unique word until the category is exhausted"""
-    if not WORD_QUEUE[category_name]:
+    if not WORD_QUEUE.get(category_name):
         words = WORD_POOL[category_name].copy()
         shuffle(words)
         WORD_QUEUE[category_name] = words
@@ -94,8 +91,8 @@ def game_status(life_count, word, check, response):
 
 def welcome_message():
     """Displays the game banner"""
-    message = f"\nGuess the Hidden Word 🎯"
-    return GAME_COVER + message
+    message = f"\nGuess the Hidden Word 🎯\n"
+    print(GAME_COVER + message)
 
 
 def choose_category():
