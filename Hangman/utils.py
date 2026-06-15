@@ -1,9 +1,9 @@
+import readline
 from random import shuffle
 
 from config import (
     GAME_COVER,
     HANGMANPICS,
-    WORD_QUEUE,
     WORD_POOL,
     CATEGORY_LABEL,
     MAX_LIVES,
@@ -17,6 +17,14 @@ from _helpers import (
 )
 
 WORD_QUEUE = {}
+
+
+def _category_completer(text, state):
+    """Returns matching category names for tab completion"""
+    options = [cat for cat in WORD_POOL if cat.startswith(text.lower())]
+    if state < len(options):
+        return options[state]
+    return None
 
 
 def get_word(category_name):
@@ -91,20 +99,27 @@ def game_status(life_count, word, check, response):
 
 def welcome_message():
     """Displays the game banner"""
-    message = f"\nGuess the Hidden Word 🎯\n"
+    message = "\nGuess the Hidden Word 🎯\n"
     print(GAME_COVER + message)
 
 
 def choose_category():
     """Asks the user to choose a category"""
-    available = "/".join(CATEGORY_LABEL.keys())
-    while True:
-        print(f"Categories: ({available.title()})")
-        response = input(f"Pick a Category: ").strip().lower()
+    readline.set_completer(_category_completer)
+    readline.parse_and_bind("tab: complete")
 
-        if response in WORD_POOL:
-            return response
-        print("Enter a valid category")
+    try:
+        available = "/".join(CATEGORY_LABEL.keys())
+        while True:
+            print(f"Categories: ({available.title()})")
+            print("(Press Tab to autocomplete) ⌨️")
+            response = input("Pick a Category: ").strip().lower()
+
+            if response in WORD_POOL:
+                return response
+            print("Enter a valid category")
+    finally:
+        readline.set_completer(None)
 
 
 def run_game(response):
