@@ -13,8 +13,8 @@ from _helpers import (
     _create_display,
     _checks_index,
     _format_display,
+    _display_remaining_lives,
 )
-
 
 for category, words in WORD_POOL.items():
     shuffled_words = words.copy()
@@ -58,11 +58,12 @@ def get_user_input(guessed):
 def lives_lost(guess, life_count, word):
     """Handles wrong guesses"""
     if guess not in word:
-        print(f"❌ '{guess}' is not in the word.")
-        print(HANGMANPICS[MAX_LIVES - life_count])
+        print(
+            f"❌ '{guess}' is not in the word.\n"
+            f"{HANGMANPICS[MAX_LIVES - life_count]}"
+        )
         life_count -= 1
-        print(f"***************** Lives Remaining: {life_count} *****************")
-
+        _display_remaining_lives(life_count)
     return life_count
 
 
@@ -72,7 +73,6 @@ def display_output(guess, word, display):
         _checks_index(guess, word, display)
 
     check = "".join(display)
-    # Display for the user
     print(_format_display(display))
 
     return check
@@ -94,10 +94,7 @@ def game_status(life_count, word, check, response):
 
 def welcome_message():
     """Displays the game banner"""
-    message = (
-        f"\nGuess the Hidden Word :)"
-        f"\nYou have: {MAX_LIVES} lives"
-    )
+    message = f"\nGuess the Hidden Word 🎯"
     return GAME_COVER + message
 
 
@@ -118,6 +115,7 @@ def run_game(response):
     life_count = MAX_LIVES
     word = get_word(response)
     display = _create_display(word)
+    _display_remaining_lives(life_count)
     print(f"{CATEGORY_LABEL[response]} to guess: {' '.join(display)}")
 
     while True:
