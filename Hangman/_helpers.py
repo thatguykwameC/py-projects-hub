@@ -1,4 +1,5 @@
 # Helper Functions
+from config import BOX_WIDTH
 
 
 def _create_display(word):
@@ -32,3 +33,11 @@ def _checks_index(guess, word, display):
     for index, letter in enumerate(word):
         if letter == guess:
             display[index] = guess
+
+
+def _display_remaining_lives(life_count):
+    """Displays remaining lives to the user"""
+    print("-" * BOX_WIDTH)
+    text = f"🎮 Lives Remaining: {life_count}"
+    print(f"{text:^{BOX_WIDTH}}")
+    print("-" * BOX_WIDTH)
