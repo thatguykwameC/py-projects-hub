@@ -8,7 +8,7 @@ from utils import (
 
 def main():
     """The main app for the Hangman game"""
-    print(welcome_message())
+    welcome_message()
 
     while True:
         category = choose_category()
