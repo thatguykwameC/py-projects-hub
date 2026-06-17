@@ -43,6 +43,21 @@ python3 app.py
 
 ---
 
+## Tab Completion
+
+Tab autocomplete is supported for category selection.
+
+- **Linux/macOS** — works out of the box.
+- **Windows** — install `pyreadline3` to enable it:
+
+```bash
+  pip install pyreadline3
+```
+
+Without it, the game still runs normally — you just won't get Tab completion.
+
+---
+
 ## Gameplay Flow
 
 1. Display hidden word as underscores.
@@ -60,23 +75,24 @@ python3 app.py
 ## Example Gameplay
 
 ```text
-.__                                                 
-|  |__ _____    ____    ____   _____ _____    ____  
-|  |  \\__  \  /    \  / ___\ /     \\__  \  /    \ 
+.__
+|  |__ _____    ____    ____   _____ _____    ____
+|  |  \\__  \  /    \  / ___\ /     \\__  \  /    \
 |   Y  \/ __ \|   |  \/ /_/  >  Y Y  \/ __ \|   |  \
 |___|  (____  /___|  /\___  /|__|_|  (____  /___|  /
-     \/     \/     \//_____/       \/     \/     \/ 
+     \/     \/     \//_____/       \/     \/     \/
 
-Guess the Hidden Word :)
-You have: 7 lives
+Guess the Hidden Word 🎯
+
 Categories: (Animal/Astronomy/Country/Fruit/Vegetable)
+(Press Tab to autocomplete) ⌨️
 Pick a Category: country
-
-Country to guess: _ _ _ _ _ _
+------------------------------------------------------
+                 🎮 Lives Remaining: 7
+------------------------------------------------------
+Country to guess: _ _ _ _ _ _ _ _ _ _ _
 Guess a letter: a
-_ _ _ a _ _
-Guess a letter: i
-Your guess 'i' is not in the word, you lose a life
+❌ 'a' is not in the word.
 
   +---+
   |   |
@@ -85,15 +101,22 @@ Your guess 'i' is not in the word, you lose a life
       |
       |
 =========
-***************** 6/7 LIVES LEFT *****************
-_ _ _ a _ _
+------------------------------------------------------
+                 🎮 Lives Remaining: 6
+------------------------------------------------------
+_ _ _ _ _ _ _ _ _ _ _
+Guess a letter: e
+_ _ _ _ _ _ _ e _ _ e
+Guess a letter: i
+_ i _ _ _ _ _ e _ _ e
 Guess a letter: a
+
 Guessed Letters:
-a
-Guess a letter: u
-_ u _ a _ u
-Guess a letter: o
-Your guess 'o' is not in the word, you lose a life
+a, e, i
+Guess a letter: l
+_ i _ _ _ _ l e _ _ e
+Guess a letter: v
+❌ 'v' is not in the word.
 
   +---+
   |   |
@@ -102,13 +125,12 @@ Your guess 'o' is not in the word, you lose a life
       |
       |
 =========
-***************** 5/7 LIVES LEFT *****************
-_ u _ a _ u
-Guess a letter: 
 
 ...
 ```
+
 ---
+
 ## Project Structure
 
 ```text
@@ -123,10 +145,23 @@ Hangman
 ├── config.py
 ├── _helpers.py
 ├── README.md
-├── trial.py
 └── utils.py
 
 ```
+
+---
+
+## Concepts Practiced
+
+- Modular programming
+- Function decomposition
+- Input validation
+- String manipulation
+- List operations
+- Control flow
+- Python modules and imports
+- State management
+- File I/O
 
 ---
 
@@ -149,17 +184,3 @@ v3.0:
 - Implemented category selection system (Animals, Countries, Fruits, etc.)
 - Improved user experience with structured prompts and cleaner game flow
 ```
-
----
-
-## Concepts Practiced
-
-- Modular programming
-- Function decomposition
-- Input validation
-- String manipulation
-- List operations
-- Control flow
-- Python modules and imports
-- State management
-- File I/O
