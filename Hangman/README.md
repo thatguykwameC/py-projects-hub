@@ -183,4 +183,5 @@ v3.0:
 - Added full game restart functionality without restarting the program
 - Implemented category selection system (Animals, Countries, Fruits, etc.)
 - Improved user experience with structured prompts and cleaner game flow
+- Added Tab autocompletion for Category selection
 ```
